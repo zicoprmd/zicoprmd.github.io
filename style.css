@@ -1,0 +1,20 @@
+.navbar {
+  background-color: #5d7457;
+}
+.jumbotron {
+  padding-top: 6rem;
+  /* background-image: url("img/bg/daunbg1.jpg"), url("img/bg/daunbg.jpg"); */
+  background-color: #b2c9ac;
+}
+
+#Project {
+  background-color: #b2c9ac;
+}
+
+.Bawah {
+  background-color: #b2c9ac;
+}
+
+section {
+  padding-top: 5rem;
+}
