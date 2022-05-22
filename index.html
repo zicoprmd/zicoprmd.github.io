@@ -17,13 +17,13 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <title>My Portofolio | dr. zico permadi</title>
+    <title>My Portofolio | zico permadi, MD</title>
   </head>
   <body id="home">
     <!-- navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-md fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#home">dr. Zico Permadi</a>
+        <a class="navbar-brand" href="#home">Zico Permadi, MD</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,11 +59,11 @@
     <!-- jumbotron -->
     <section class="jumbotron text-center text-dark">
       <img src="img/pasfotosquare.jpg" alt="zico permadi" width="250" class="rounded-circle shadow-lg" />
-      <h1 class="display-4">dr. Zico permadi</h1>
-      <p class="lead">Medical Doctor | Web Developer | Content Creator</p>
+      <h1 class="display-4">Zico permadi, MD</h1>
+      <p class="lead"></p>
       <!-- <hr class="my-4" /> -->
-      <p>Hello my name is Zico, Medical Doctor UPN "Veteran Jakarta graduates. I am a hard working and Highly motivated to develop skills professionally.</p>
-      <a class="btn btn-primary btn" href="https://twitter.com/zicoprmd" role="button">Follow Me</a>
+      <p class="deskripsi"></p>
+      <a class="btn btn-primary btn" href="https://twitter.com/zicoprmd" role="button" data-aos="fade-up">Follow Me</a>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -107,7 +107,6 @@
     <!-- about end -->
 
     <!-- Projects -->
-
     <section id="Project">
       <div class="container">
         <div class="row text-center mb-3">
@@ -230,7 +229,6 @@
         </div>
       </div>
     </section>
-
     <!-- END gallery -->
 
     <!-- Contact Me -->
@@ -293,11 +291,23 @@
     <!-- AOS script -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
+    <!-- GSAP script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"></script>
     <script>
-      const galleryImage = document.querySelectorAll(".gallery-img");
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', { duration: 2, delay: 1, text: 'Medical Doctor | Web Developer | Content Creator' });
+      gsap.to('.deskripsi', { duration: 3, delay: 1.5, text: 'Hello my name is Zico, Medical Doctor UPN "Veteran Jakarta graduates. I am a hard working and Highly motivated to develop skills professionally.' });
+      gsap.from('.jumbotron img', { duration: 2, y: -400, opacity: 0, rotation: -500, ease: 'bounce' });
+      gsap.from('.navbar', { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
+      gsap.from('.display-4', { duration: 1.5, x: -100, opacity: 0, delay: 0.5, ease: 'back' });
+    </script>
+
+    <script>
+      const galleryImage = document.querySelectorAll('.gallery-img');
 
       galleryImage.forEach((img, i) => {
-        img.dataset.aos = "fade-down";
+        img.dataset.aos = 'fade-down';
         img.dataset.aosDelay = i * 100;
         img.dataset.aosDuration = 1000;
       });
@@ -309,34 +319,34 @@
     </script>
 
     <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbx4TmkrQiCvB6NVU-hyrR-erV1UeRes1jiB6OuIeeTOPhmKx5q5FyWiXwJGvq3k3nRTGA/exec";
-      const form = document.forms["zico-contacts-form"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const btnLoading = document.querySelector(".btn-loading");
-      const myAlert = document.querySelector(".my-alert");
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbx4TmkrQiCvB6NVU-hyrR-erV1UeRes1jiB6OuIeeTOPhmKx5q5FyWiXwJGvq3k3nRTGA/exec';
+      const form = document.forms['zico-contacts-form'];
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlert = document.querySelector('.my-alert');
 
-      form.addEventListener("submit", (e) => {
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
         // ketika tombol submit di klik
         // tampilkan tombol loading, hilangkan tombol kirim
-        btnKirim.classList.toggle("d-none");
-        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle('d-none');
+        btnLoading.classList.toggle('d-none');
 
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
           .then((response) => {
             // tampilkan tombol kirim, hilangkan tombol loading
-            btnKirim.classList.toggle("d-none");
-            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle('d-none');
+            btnLoading.classList.toggle('d-none');
 
             //tampilkan alert
-            myAlert.classList.toggle("d-none");
+            myAlert.classList.toggle('d-none');
 
             //reset formnya
             form.reset();
 
-            console.log("Success!", response);
+            console.log('Success!', response);
           })
-          .catch((error) => console.error("Error!", error.message));
+          .catch((error) => console.error('Error!', error.message));
       });
     </script>
   </body>
