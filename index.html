@@ -23,7 +23,7 @@
     <!-- navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-md fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#home">Zico Permadi, MD</a>
+        <a class="navbar-brand" href="#home">zico Permadi, MD</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,7 +59,7 @@
     <!-- jumbotron -->
     <section class="jumbotron text-center text-dark">
       <img src="img/pasfotosquare.jpg" alt="zico permadi" width="250" class="rounded-circle shadow-lg" />
-      <h1 class="display-4">Zico permadi, MD</h1>
+      <h1 class="display-4">zico permadi, MD</h1>
       <p class="lead"></p>
       <!-- <hr class="my-4" /> -->
       <p class="deskripsi"></p>
@@ -157,6 +157,39 @@
           </div>
         </div>
       </div>
+      <section id="my-medicaleq">
+        <div class="container">
+          <div class="row text-center mb-3">
+            <div class="col">
+              <h2 data-aos="fade-down" data-aos-offset="300">My Medical Equipment</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="medicaleq-box" data-aos="fade-up" data-aos-offset="300">
+                <h4 class="medical-stetoskop">Litmann</h4>
+                <img src="img/png/stethoscope.png" alt="Litmman" class="stetoskop-img" />
+                <a href="https://www.tokopedia.com/find/litmann" class="btn btn-warning medicaleq-detail-button">Show Details</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="medicaleq-box2" data-aos="fade-up" data-aos-offset="300" data-aos-delay="200">
+                <h4 class="medical-sphygmomanometer">Microlife</h4>
+                <img src="img/png/sphygmomanometer.png" alt="Microlife" class="sphygmomanometer-img" />
+                <a href="https://www.tokopedia.com/find/tensimeter" class="btn btn-warning medicaleq-detail-button">Show Details</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="medicaleq-box3" data-aos="fade-up" data-aos-offset="300" data-aos-delay="300">
+                <h4 class="medical-ambubag">Ambubag</h4>
+                <img src="img/png/ambubag.png" alt="ambubag" class="ambubag-img" />
+                <a href="https://www.tokopedia.com/find/ambubag" class="btn btn-warning medicaleq-detail-button">Show Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <img src="img/png/cardiacmonitoring.png" alt="" /> -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -348,6 +381,30 @@
           })
           .catch((error) => console.error('Error!', error.message));
       });
+    </script>
+
+    <script type="text/javascript" src="JS/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelector('.medicaleq-box'), {
+        max: 25,
+        speed: 2500,
+      });
+
+      VanillaTilt.init(document.querySelector('.medicaleq-box2'), {
+        max: 25,
+        speed: 2500,
+      });
+
+      VanillaTilt.init(document.querySelector('.medicaleq-box3'), {
+        max: 25,
+        speed: 2500,
+      });
+
+      // //It also supports NodeList
+      // VanillaTilt.init(document.querySelectorAll('.medicaleq-box'), {
+      //   max: 27,
+      //   speed: 2300,
+      // });
     </script>
   </body>
 </html>
